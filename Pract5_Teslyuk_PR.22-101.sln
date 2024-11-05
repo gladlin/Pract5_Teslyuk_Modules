@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pract5_Teslyuk_PR.22-101", "Pract5_Teslyuk_PR.22-101\Pract5_Teslyuk_PR.22-101.csproj", "{F90FC54F-D66D-4ACB-9061-E803E12660D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashPasswords", "HashPasswords\HashPasswords.csproj", "{A7107E31-CB93-457B-83D8-1A67D6E36A9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{B8C03681-7557-4825-9678-A74572CD212F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F90FC54F-D66D-4ACB-9061-E803E12660D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90FC54F-D66D-4ACB-9061-E803E12660D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90FC54F-D66D-4ACB-9061-E803E12660D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90FC54F-D66D-4ACB-9061-E803E12660D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7107E31-CB93-457B-83D8-1A67D6E36A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7107E31-CB93-457B-83D8-1A67D6E36A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7107E31-CB93-457B-83D8-1A67D6E36A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7107E31-CB93-457B-83D8-1A67D6E36A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2065D1D-5D7E-433F-9EC7-17C8347D94CB}
+	EndGlobalSection
+EndGlobal
