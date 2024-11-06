@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
+using System;
 using HashPasswords;
 
 using System.Threading.Tasks;
@@ -26,7 +22,6 @@ namespace Pract5_Teslyuk_PR._22_101
             // Хешируем пароль
             string hashedPassword = Hash.ConvertTo_SHA256(password);
 
-            // Создаем объект пользователя с хешированным паролем
             UserAccounts newUser = new UserAccounts
             {
                 username = username,
@@ -35,7 +30,6 @@ namespace Pract5_Teslyuk_PR._22_101
                 role = role
             };
 
-            // Создаем пользователя в базе данных
             Helper helper = new Helper();
             helper.CreateUser(newUser);
         }
