@@ -1,38 +1,51 @@
-﻿using System;
+﻿using Pract5_Teslyuk_PR._22_101.Models;
+using System;
+using System.Linq;
 
-namespace HashPasswords
+namespace Pract5_Teslyuk_PR._22_101
 {
-	public class Helper
-	{
-		public static MusicRecordEntities _context;
 
-		public static MusicRecordEntities GetContext()
-		{
-			if (_context == null)
-				_context = new MusicRecordEntities();
-			return _context;
-		}
+    public class Helper
+    {
+        private static MusicRecordEntities _context;
 
-        public void CreateUser(Users user)
+        public static MusicRecordEntities GetContext()
         {
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            if (_context == null)
+                _context = new MusicRecordEntities();
+            return _context;
         }
-        public void UpdateUser(Users user)
+
+        public void CreateUser(UserAccounts user)
         {
-            // Состояние сущности помечается как Измененная
-            _context.Entry(user).State = System.Data.Entity.EntityState.Modified;
-            _context.SaveChanges(); // Сохранение измененной сущности в БД
+            var context = GetContext();
+
+            // Получаем последний ID, если таблица не пуста
+            int maxId = context.UserAccounts.Any()
+                ? context.UserAccounts.OrderByDescending(u => u.account_id).First().account_id
+                : 0;
+
+            user.account_id = maxId + 1;
+            if (user.username != "" && user.password != "" && user.email != "" && user.role != "")
+            {
+
+                context.UserAccounts.Add(user);
+                try
+                {
+                    context.SaveChanges();
+                    Console.WriteLine("Пользователь успешно добавлен.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+
+                }
+            }
+            else {
+                Console.WriteLine("Не получилось создать пользователя, так как были введены не все необходимые данные");
+            }
         }
-        public void RemoveUser(int idUser)
-        {
-            var users = _context.Users.Find(idUser); // Поиск записи пользователя по его id
-            _context.Users.Remove(users); // Удаление записи найденного пользователя
-            _context.SaveChanges(); // Сохранение изменений в БД
-        }
-        public List<Users> FiltrUsers()
-        {
-            return _context.Users.Where(x => x.Name.StartsWith("M") || x.Name.StartsWith("A")).ToList();
-        }
+
     }
+
 }
